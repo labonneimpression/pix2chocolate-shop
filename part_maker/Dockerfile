@@ -14,7 +14,7 @@ RUN uv add bpy
 RUN uv sync --locked
 
 # Post-build & run
-COPY generate_preview.py chocolate_biscuit_rig_micro_displacement.blend ChocolateHeightmap_input.png /code/
+COPY generate_cad_part.py chocolate_biscuit_CAD_part.blend ChocolateHeightmap_input.png /code/
 
 RUN mkdir -p /code/output/
 RUN mkdir -p /code/uploads/
