@@ -3,12 +3,12 @@ services:
     build: ./main_app
     image: pix2chocolate-shop-main_app:latest
     ports:
-      - "8000:8000"
+      - "8001:8000"
   preview_maker:
     build: ./preview_maker
     image: pix2chocolate-shop-preview_maker:latest
     ports:
-      - "8001:8036"
+      - "8002:8036"
 #   part_maker:
 #     build: ./part_maker
 #     image: labonneimpression/pix2chocolate-shop-part_maker:latest
