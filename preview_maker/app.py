@@ -17,6 +17,10 @@ STATIC_PATH = "/static"
 
 app.mount(STATIC_PATH, StaticFiles(directory=OUTPUT_DIR), name="static")
 
+@app.get("/preview/")
+async def get_previews():
+    list_of_files = glob.glob(f"{OUTPUT_DIR}/*")
+    return {"files": list_of_files}
 
 @app.post("/preview/")
 async def get_order_preview(file: UploadFile | None = None):
@@ -59,7 +63,7 @@ async def get_order_preview(file: UploadFile | None = None):
         )
 
         list_of_files = glob.glob(f"{OUTPUT_DIR}/*")
-        latest_preview_file = max(list_of_files, key=os.path.getctime)
+        latest_preview_file = max(list_of_files, key=os.path.getctime) if list_of_files else ""
         return {"filename": latest_preview_file.replace(OUTPUT_DIR, STATIC_PATH)}
 
 
