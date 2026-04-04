@@ -1,7 +1,6 @@
 __pycache__
 db.sqlite3
 .python-version
-uv.lock
 migrations
 output/*.*
 uploads/*.*
