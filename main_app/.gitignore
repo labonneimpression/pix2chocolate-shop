@@ -5,3 +5,4 @@ migrations
 output/*.*
 uploads/*.*
 staticfiles
+.env

@@ -8,8 +8,6 @@ WORKDIR /code/
 
 COPY uv.lock pyproject.toml app.py /code/
 
-RUN apt update && apt -y install build-essential
-
 # isolated for caching (long bpy, numpy build etc..)
 RUN uv add bpy
 
@@ -21,6 +19,6 @@ COPY generate_preview.py chocolate_biscuit_rig_micro_displacement.blend Chocolat
 RUN mkdir -p /code/output/
 RUN mkdir -p /code/uploads/
 
-EXPOSE 8000
+EXPOSE 8036
 
 CMD ["uv", "run", "app.py"]

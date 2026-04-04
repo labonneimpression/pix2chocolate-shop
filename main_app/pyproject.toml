@@ -5,7 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "django-environ>=0.13.0",
     "nanodjango>=0.16.0",
+    "tzdata>=2025.3",
 ]
 
 [dependency-groups]

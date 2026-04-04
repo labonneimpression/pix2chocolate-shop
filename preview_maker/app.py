@@ -10,10 +10,12 @@ from fastapi.staticfiles import StaticFiles
 import uvicorn
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="output"), name="static")
 
 UPLOADS_DIR = "uploads"
 OUTPUT_DIR = "output"
+STATIC_PATH = "/static"
+
+app.mount(STATIC_PATH, StaticFiles(directory=OUTPUT_DIR), name="static")
 
 
 @app.post("/preview/")
@@ -58,7 +60,7 @@ async def get_order_preview(file: UploadFile | None = None):
 
         list_of_files = glob.glob(f"{OUTPUT_DIR}/*")
         latest_preview_file = max(list_of_files, key=os.path.getctime)
-        return {"filename": latest_preview_file}
+        return {"filename": latest_preview_file.replace(OUTPUT_DIR, STATIC_PATH)}
 
 
 if __name__ == "__main__":
