@@ -10,6 +10,9 @@ COPY uv.lock pyproject.toml app.py /code/
 
 RUN apt update && apt -y install build-essential
 
+# isolated for caching (long bpy, numpy build etc..)
+RUN uv add bpy
+
 RUN uv sync --locked
 
 # Post-build & run
