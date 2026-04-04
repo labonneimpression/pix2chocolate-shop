@@ -6,7 +6,7 @@ COPY --from=docker.io/astral/uv:latest /uv /uvx /bin/
 RUN mkdir /code/
 WORKDIR /code/
 
-COPY uv.lock pyproject.toml app.py .env* /code/
+COPY uv.lock pyproject.toml app.py /code/
 
 RUN uv sync --locked
 
