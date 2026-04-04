@@ -9,6 +9,8 @@ services:
     image: pix2chocolate-shop-preview_maker:latest
     ports:
       - "8002:8036"
-#   part_maker:
-#     build: ./part_maker
-#     image: labonneimpression/pix2chocolate-shop-part_maker:latest
+   part_maker:
+     build: ./part_maker
+     image: pix2chocolate-shop-part_maker:latest
+     ports:
+       - "8003:8037"

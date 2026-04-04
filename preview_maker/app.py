@@ -39,17 +39,9 @@ async def get_order_preview(file: UploadFile | None = None):
         finally:
             file.file.close()
 
-        #        command = [
-        #            "blender/blender",
-        #            "--background",
-        #            "-P",
-        #            "generate_preview.py",
-        #            "--",
-        #            os.path.join(os.getcwd(), input_displacement_texture_filename),
-        #        ]
         command = [
             "uv",
-            "python",
+            "run",
             "generate_preview.py",
             "--",
             os.path.join(os.getcwd(), input_displacement_texture_filename),
