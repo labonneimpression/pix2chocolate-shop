@@ -1,0 +1,16 @@
+[project]
+name = "pix2chocolate-shop_preview_maker"
+version = "0.1.0"
+description = "REST API rendering chocolate biscuit previews from displacement maps"
+readme = "README.md"
+requires-python = "==3.13.*"
+dependencies = [
+    "bpy>=5.0.1",
+    "fastapi>=0.135.3",
+    "python-multipart>=0.0.22",
+]
+
+[dependency-groups]
+dev = [
+    "black>=26.3.1",
+]

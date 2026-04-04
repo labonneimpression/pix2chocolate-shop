@@ -1,0 +1,10 @@
+services:
+  main_app:
+    build: ./main_app
+    image: labonneimpression/pix2chocolate-shop-main_app:latest
+  preview_maker:
+    build: ./preview_maker
+    image: labonneimpression/pix2chocolate-shop-preview_maker:latest
+#   part_maker:
+#     build: ./part_maker
+#     image: labonneimpression/pix2chocolate-shop-part_maker:latest
