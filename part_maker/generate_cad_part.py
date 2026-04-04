@@ -12,6 +12,7 @@ CAD_PART_OBJECT_NAME = "ChocolateRelief_RealDisplacement_CADPart"
 UUID = uuid.uuid1()
 CAD_OUTPUT_FILENAME = f"output/chocolate_mold_matrix_insert_CAD_part_{UUID}.stl"
 
+
 # Change input displacement texture and export to STL
 def export_cad_part():
     if "--" not in sys.argv:
@@ -23,14 +24,15 @@ def export_cad_part():
         print(f"Given path ({input_image_path}) is not an image.")
         sys.exit(1)
 
-
     # Load product staging scene
     bpy.ops.wm.open_mainfile(filepath=CAD_BLENDER_SCENE_PATH)
 
     # Replace displacement map file path on the fly (without saving file)
     chocoMapKey = "ChocolateHeightmap"
     if chocoMapKey not in bpy.data.images.keys():
-        raise IndexError("Failed to export STL for part (source 3d file misses texture)")
+        raise IndexError(
+            "Failed to export STL for part (source 3d file misses texture)"
+        )
     bpy.data.images[chocoMapKey].filepath = input_image_path
 
     # Export to STL

@@ -3,6 +3,6 @@ db.sqlite3
 .python-version
 migrations
 output/*.*
-uploads/*.*
+uploads/*
 staticfiles
 .env

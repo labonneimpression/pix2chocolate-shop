@@ -19,6 +19,6 @@ COPY generate_cad_part.py chocolate_biscuit_CAD_part.blend ChocolateHeightmap_in
 RUN mkdir -p /code/output/
 RUN mkdir -p /code/uploads/
 
-EXPOSE 8036
+EXPOSE 8037
 
 CMD ["uv", "run", "app.py"]
